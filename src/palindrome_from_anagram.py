@@ -21,6 +21,21 @@ def game_of_thrones(s):
     return 'YES'
 
 
+def game_of_thrones_xor(s):
+    if s is None or len(s) == 0:
+        return 'YES'
+
+    xor = s[0]
+
+    for x in xrange(1, len(s)):
+        xor = xor ^ s[x]
+
+    if xor in s:
+        return 'YES'
+
+    return 'NO'
+
+
 s = raw_input().strip()
-result = game_of_thrones(s)
+result = game_of_thrones_xor(s)
 print(result)
